@@ -7,4 +7,5 @@ Your open-source contact app
 - english integration
 - responsive design
 - mac / linux integration
+- CLI mode
 
