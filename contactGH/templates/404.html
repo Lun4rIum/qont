@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <meta charset="utf-8">
+    <title>Erreur</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+
+<p class="FFtext">ERREUR 404, NOUS VOUS REDIRIGEONS EN LIEU SÛR.</p>
+
+<script>
+var timeleft = 3;
+var downloadTimer = setInterval(function(){
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+    location.href = '{{ url_for("choose") }}'
+  }
+  document.getElementById("progressBar").value = 10 - timeleft;
+  timeleft -= 1;
+}, 1000);
+
+</script>
+<progress value="0" max="10" id="progressBar"></progress>
+<script>
+    if(document.cookie == "isDark=true"){
+        
+        var element = document.body;
+        element.classList.toggle("dark-mode"); 
+        var element= document.getElementById("checkMode");
+        element.setAttribute("checked","true")
+    }
+
+    if(document.cookie == "isDark=false"){
+
+            var element = document.body;
+            element.classList.remove("dark-mode");
+    }
+</script>
+</body>
+</html>

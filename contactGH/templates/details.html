@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <meta charset="utf-8">
+    <title>Contacts</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+
+    <script>
+      function copyElementText(id) {
+            var text = document.getElementById(id).innerText;
+            var elem = document.createElement("textarea");
+            document.body.appendChild(elem);
+            elem.value = text;
+            elem.select();
+            document.execCommand("copy");
+            document.body.removeChild(elem);
+            var x = document.getElementById("notification");
+            x.className = "show";
+
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        }        
+
+        
+    </script>
+
+</head>
+<body>
+<div class="switchMode">
+    <p class="lightIcon">☀️</p>
+        <label class="switch">
+            <input type="checkbox" class="checkMode" id="checkMode">
+            <span class="slider round"></span>
+        </label>
+    <p class="darkIcon">🌑</p>
+</div>
+
+<div class="buttonAdd">
+    <a class="addbutton" title="Ajouter un contact" href='{{ url_for("add_contact") }}''>+</a>
+</div>
+
+<div class="list">
+
+    <ol>
+        {%for i in range(options|length)%}
+    
+            <a class="listName" href="/{{i}}">{{options[i]}} </a>
+        {%endfor%}
+    </ol>
+</div>
+<script>
+    document.getElementById('checkMode').onchange = function() {
+        if ( document.getElementById('checkMode').checked === false ) {
+            var element = document.body;
+            element.classList.remove("dark-mode");
+
+            document.cookie = "isDark=false;SameSite=Lax";
+
+        }
+        else{
+            var element = document.body;
+            element.classList.add("dark-mode");
+        
+            document.cookie = "isDark=true;SameSite=Lax";
+
+        }
+        
+    };
+</script>
+
+
+
+<div class="infoBlock">
+    <div class="MajorInfoBlock">
+        <div class="parentName">
+            <p class="name"> {{ name }} </p>
+        </div>
+        <div class="parentMail">
+            <label class="labelMail" for="mail">Adresse e-mail : </label>
+            <p id="mail" class="mail" onclick="copyElementText(this.id)">&#9993; {{ mail }} </p>
+        </div>
+
+        <div class="parentLocation">
+            <label class="labelLocation" for="location">Adresse : </label>
+           
+            <p class="location" id="location" onclick="copyElementText(this.id)">&#128205; {{ location }} </p>
+        </div>
+    </div>
+
+    <div class="minorInfoBlock">
+        <div class="parentNumber">
+            <p class="number" id="number" onclick="copyElementText(this.id)">&#x260E; {{ number }} </p>
+        </div>
+
+
+        <div class="parentBirthday">
+            <p class="birthday">&#127874; {{ birthday }} </p>
+        </div>
+    </div>
+    <div class="minorNotesBlock">
+        <div class="parentNotes">
+            
+            <p class="notes">&#128214; {{ notes }} </p>
+        </div>
+    </div>
+    <div class="removeParent">
+        
+            <button onclick='location.href ="#popup"' class="removeButton">
+                &#128465;
+            </button>
+        
+        <div id="popup" class="overlay" onclick="location.href='#'">
+            <div class="removeConfirmation" onclick="location.href='#popup'">
+                <p class="removeConfirmationText">
+                    Êtes vous sûr de vouloir supprimer le contact ?
+                </p>
+                <form method ="post" action="{{ url_for('delete') }}" style="display: inline-block;">
+                    <button class="removeConfirmationYes" name='removeButton' value="delete" type="submit">Oui</button>
+                
+                </form>
+                <button class="removeConfirmationNo" onclick="location.href='#'"><a href="#" class="close">Non</a></button>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div id="notification">
+    <p class="copied" >✔️ élément copié dans votre presse-papier.</p>
+</div>
+<div class = "vertical"></div>
+
+
+
+<script>
+    if(document.cookie == "isDark=true"){
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+        var element= document.getElementById("checkMode");
+        element.setAttribute("checked","true")
+    }
+    if(document.cookie == "isDark=false"){
+            var element = document.body;
+            element.classList.remove("dark-mode");
+    }
+</script>
+</body>
+
+</html>

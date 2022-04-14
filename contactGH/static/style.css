@@ -1,0 +1,2142 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
+
+body{
+    color: rgb(0, 0, 0);
+    font-family: 'Nunito Sans', sans-serif;
+    /*background-color: rgb(229, 229, 229);*/
+    background-image: linear-gradient(to top right, #FF5F6D, #FFC371);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+
+    background-repeat:no-repeat;
+    transition: 0.5s;
+ 
+
+}
+
+.FFtext{ /*erreur 404*/
+    color:#FFF;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.dark-mode{
+    
+    font-family: 'Nunito Sans', sans-serif;
+    /*background-color: rgb(229, 229, 229);*/
+    background-image: linear-gradient(to top right, #232526, #414345);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    width: 99%;
+    background-repeat:no-repeat;
+    transition: 0.5s;
+ 
+
+}
+
+.switchMode{
+    margin: auto;
+    display: inline-block;
+    position: relative;
+
+    left: 150px;
+
+    background-color: rgba(0, 0, 0, 0.1);
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 5px;
+
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+.switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.1);
+-webkit-transition: .4s;
+transition: .4s;
+}
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.1);
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 26px;
+width: 26px;
+left: 4px;
+bottom: 4px;
+background-color: #FFF;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+input:checked + .slider {
+background-color: rgba(255, 255, 255, 0.2);
+}
+
+input:focus + .slider {
+box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+input:checked + .slider:before {
+-webkit-transform: translateX(26px);
+-ms-transform: translateX(26px);
+transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+border-radius: 34px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+}
+
+.lightIcon{
+    position: relative;
+    display: inline-block;
+    padding-right: 7px;
+    font-size: 20px;
+    top: 8px;
+    margin: 0;
+    
+}
+
+.darkIcon{
+    position: relative;
+    display: inline-block;
+    padding-left: 7px;
+    font-size: 20px;
+    top: 8px;
+    margin: 0;
+}
+
+
+
+#notification{
+    background-color: rgba(124, 238, 101, 0.3);
+    border: 4px solid rgb(124, 238, 101);
+    border-radius: 1px;
+    display: inline-block;
+
+    visibility: hidden;  
+    min-width: 250px; 
+    margin-left: -125px; 
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px; 
+    position: fixed;
+    z-index: 1; 
+    left: 50%;
+    bottom: 30px;
+
+}
+
+#notification.show{
+    visibility: visible; 
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+::-moz-selection { 
+    background: #FFC371;
+
+  }
+  
+::selection {
+    background: #FFC371;
+
+  }
+
+.copied{
+    color: rgb(124, 238, 101);
+}
+
+
+footer{
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    height: auto;
+    padding-top: 40px;
+    color: #fff;
+    
+}
+
+.foot{
+
+    text-align: right;
+    
+
+}
+.github-icon{
+    display: inline-block;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.horizontal {
+    border-top: 3px solid #FFF;
+
+
+}
+
+.github-pseudo{
+    display: inline-block;
+    color: #FFF;
+    font-weight: bold;
+    padding-right: 30px;
+    cursor: pointer;
+}
+.fa-github{
+    color: #FFF;
+}
+
+.list{
+    position: relative;
+    display: flex;
+    float:left;
+    text-align: left;
+    padding-top: 10px;
+    flex-direction: column;
+    align-items:center;
+    overflow:scroll; 
+    height:100vh;
+    overflow-x: hidden;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+
+    
+}
+.list::-webkit-scrollbar {
+    display: none;
+  }
+
+.listName{
+    overflow-wrap: break-word;
+    flex-direction: column;
+    display:flex;
+    width:100px;
+
+    
+    text-decoration: none;
+    clear: both;
+    position:relative;
+    margin-bottom: 8px;
+    color: #FFF;
+    
+    border-radius: 2px;
+    background-color:rgba(0, 0, 0, 0.15);
+    padding-left: 14px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    text-align: left;
+    
+
+}
+
+.listName:visited{
+    text-decoration: none;
+    color: #FFF
+}
+
+.listName:hover{
+    
+    background-color:rgba(0, 0, 0, 0.3);
+}
+
+
+.listIndex{
+    
+    display: flex;  
+    margin: auto;
+    text-align: left;
+    padding-top: 10px;
+    flex-direction: column;
+    align-items:center;
+    width: 44%;
+
+    height: 30px;
+
+
+}
+
+
+.listNameIndex{
+    overflow-wrap: break-word;
+    flex-direction: column;
+    height: auto;
+    display:block;
+    min-width: 100px;
+    width:auto;
+    margin: auto;
+    text-decoration: none;
+    height: 30px;
+
+    margin-bottom: 8px;
+    padding-top: 4px;
+    color: #FFF;
+    border: 2px solid #FFF;
+    border-radius: 2px;
+    background-color:rgba(0, 0, 0, 0.1);
+    text-align: center;
+    
+}
+
+.listNameIndex:visited{
+    text-decoration: none;
+    color: #FFF
+}
+
+.listNameIndex:hover{
+    color: #FFF;
+    background-color:rgba(0, 0, 0, 0.4);
+}
+
+
+ol{
+    position: relative;
+    right: 30%;
+    float:left;
+}
+
+.selection{
+    position:relative;
+    display: flex;
+    top: -20%;
+    right: 140px;
+    width: 60px;
+
+    
+}
+
+.selectionConfirm{
+    position:relative;
+    display: flex;
+    top: -20px;
+    right: 70px;
+}
+
+.load_backupButton {
+    display: none;
+}
+.load_backup{
+    position: relative;
+    top: 150px;
+    left: 10px;
+}
+
+.save_backup{
+    position: relative;
+    top: 150px;
+    left: 30%;
+    padding-left: 30px;
+}
+
+.loadbackup{
+    position:absolute;
+    display: flex;
+
+    color: #111;
+    font-size: 50px;
+
+    box-shadow: 0 0 6px 0 rgba(157,96,212,0.5);
+    border: solid 3px transparent;
+    border-image: linear-gradient(to left, #FF5F6D, #FFC371);
+    border-image-slice: 1;
+    width: 80px;
+    height: 80px;
+    padding-bottom: 7px;
+    padding-left: 5px;
+    text-align: center;
+    color: #FFC371;
+
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+.exporting{
+    position:absolute;
+    display: flex;
+
+    color: #111;
+    font-size: 50px;
+
+    box-shadow: 0 0 6px 0 rgba(157,96,212,0.5);
+    border: solid 3px transparent;
+    border-image: linear-gradient(to left, #FF5F6D, #FFC371);
+    border-image-slice: 1;
+    width: 80px;
+    height: 80px;
+    padding-bottom: 7px;
+    padding-left: 5px;
+    text-align: center;
+    color: #FFC371;
+
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.AddContactBigButton{
+    position: relative;
+    top: 10px;
+    left: 10px;
+
+}
+
+@media screen and (max-width: 675px){
+    .save_backup{
+        position: relative;
+        top: 190px;
+        left: -20px
+
+    }
+    .load_backup{
+        position: relative;
+        top: 100px;
+        
+
+    }
+}
+
+.BigAddButton{
+    position:absolute;
+    display: flex;
+
+    color: #111;
+    font-size: 80px;
+
+    box-shadow: 0 0 6px 0 rgba(157,96,212,0.5);
+    border: solid 3px transparent;
+    border-image: linear-gradient(to left, #FF5F6D, #FFC371);
+    border-image-slice: 1;
+    width: 80px;
+    height: 80px;
+    padding-bottom: 7px;
+    padding-left: 5px;
+    text-align: center;
+    color: #FFC371;
+
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+
+.buttonGrid{
+    background-color: rgba(0, 0, 0, 0.1);
+
+    width: 30vw;
+    height: 300px;
+    top: 20px;
+    margin-right: auto;
+    position: relative;
+    left: 35vw;
+    
+    
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 2;
+    
+}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+.removeConfirmation{
+    text-align: center;
+    background-color: #FFF;
+    border: 5px solid rgb(255, 0, 0);
+    border-radius: 6px;
+
+    padding: 20px;
+    padding-top: 0px;
+    font-size: 20px;
+    width: 30%;
+    position: relative;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+    transition: all 5s ease-in-out;
+    margin: 70px auto;
+}
+
+.removeConfirmationText{
+
+}
+.removeConfirmationYes{
+    font-size: 20px;
+    background-color: rgb(255, 90, 90, 0.3);
+    box-shadow: 0 0 6px 0 rgba(157,96,212,0.5);
+    border: solid 3px transparent;
+    border-color: rgb(255, 37, 37);
+    margin-left: 20px;
+    margin-right: 20px;
+    color: rgb(255, 37, 37);
+    cursor: pointer;
+
+}
+.removeConfirmationYes:hover{
+    cursor: pointer;
+    background-color: rgba(191, 67, 67, 0.3);
+    box-shadow: 0 0 6px 0 rgba(157,96,212,0.5);
+
+    
+}
+.removeConfirmationNo{
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    background-color: rgba(109, 255, 90, 0.3);
+    box-shadow: 0 0 6px 0 rgba(157,96,212,0.5);
+    border: solid 3px transparent;
+    border-color: rgb(99, 255, 37);
+
+    color: rgb(99, 255, 37);
+
+}
+.removeConfirmationNo:hover{
+    background-color: rgba(84, 191, 67, 0.3);
+    box-shadow: 0 0 6px 0 rgba(157,96,212,0.5);
+    
+}
+
+.close{
+    text-decoration: none;
+    color: rgb(99, 255, 37);
+}
+
+.removeButton{
+    font-size: 50px;
+    width: 80px;
+    height: 80px;
+    background-color: rgb(255, 90, 90, 0.3);
+    box-shadow: 0 0 6px 0 rgba(157,96,212,0.5);
+    border: solid 3px transparent;
+    border-color: rgb(255, 37, 37);
+    border-radius: 3px;
+    color: rgb(255, 37, 37);
+    text-align: center;
+    cursor: pointer;
+    
+}
+.removeButton:hover{
+    background-color: rgba(191, 67, 67, 0.3);
+    box-shadow: 0 0 6px 0 rgba(157,96,212,0.5);
+    
+
+
+    text-align: center;
+}
+
+.removeParent{
+    position: relative;
+    display: inline-block;
+    top: -345px;
+    left: 37%;
+
+}
+
+.addbutton{
+
+
+    display:flex;
+    width:58px;
+
+    
+    text-decoration: none;
+    clear: both;
+    position:relative;
+    margin-bottom: 8px;
+    color: #FFF;
+    
+    border-radius: 2px;
+    background-color:rgba(0, 0, 0, 0.15);
+    padding-left: 50px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    text-align: center;
+
+    font-weight: bold;
+
+
+}
+
+.addbutton:visited{
+    text-decoration: none;
+    color: #FFF;
+    font-weight: bold;
+}
+
+.addbutton:hover{
+    
+    background-color:rgba(0, 0, 0, 0.3);
+}
+
+
+
+.buttonAdd{
+    position: relative;
+    
+    top:   -30px;
+    
+    
+    width: 50px;
+    height: 14px;
+    padding-bottom: 7px;
+
+}
+
+
+.add{
+    text-decoration: none;
+    font-size: 20px;  
+    color:#FFC371;
+    
+}
+.vertical {
+    border-left: 3px solid black;
+    height: 100%;
+    position:fixed;
+    left: 7.5em;
+    top: 0%;
+    border-color: rgb(217, 217, 217);
+    border-radius: 5px;
+
+
+}
+
+#progressBar{
+    height: 30px;
+    width: 500px;
+    max-width: 80%;
+    display: block;
+    margin: auto;
+    margin-top: 20vh;
+    position: relative;
+    background: #FFF !important;
+    padding: 3px;
+    box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+    border: 5px solid #FFF;
+    border-radius: 5px;
+}
+
+progress::-webkit-progress-bar {
+    height: 30px;
+    width: 500px;
+    max-width: 80%;
+    display: block;
+    margin: auto;
+    margin-top: 20vh;
+    position: relative;
+    background: #FFF !important;
+    padding: 3px;
+    box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+    border: 5px solid #FFF;
+    border-radius: 5px;
+}
+
+.infoBlock{
+    display: block;
+    position: relative;
+    left: 0px;
+    margin: auto;
+    text-align: left;
+    width: 700px;
+    overflow-wrap: break-word;
+    border: 2px solid #FFF;
+    border-radius: 5px;
+    height:300px;
+    top: 80px;
+    box-shadow: 0 0 10px 0 rgba(157,96,212,0.5);
+}
+
+.name{
+
+    display: inline-block;
+    font-weight: bold;
+    font-size: 23px;
+    top: 1px;
+    left:20px;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 330px;
+
+
+    
+}
+
+.number{
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: left;
+    width: 170px;
+    text-align: left;
+    border: 3px solid #FFF;
+    border-radius: 5px;
+    background-color: #FFF;
+    cursor: pointer;
+}
+.number:hover{
+    color: rgba(44, 44, 44, 0.8);
+}
+
+.mail{
+
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    width: 310px;
+    text-align: left;
+    color: rgba(44, 44, 44, 0.716);
+
+    cursor: pointer;
+
+}
+
+.mail:hover{
+    color: rgba(44, 44, 44, 0.9);
+}
+
+.location{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 310px;
+    text-align: left;
+    display: inline-block;
+    color: rgba(44, 44, 44, 0.716);
+    cursor: pointer;
+
+}
+
+.location:hover{
+    color: rgba(44, 44, 44, 0.9);
+}
+
+.labelMail{
+    position: absolute;
+    opacity: 0%;
+}
+
+.labelLocation{
+    position: absolute;
+    opacity: 0%;
+}
+
+.birthday{
+
+    display: inline-block;
+    border: 3px solid #FFF;
+    border-radius: 5px;
+    background-color: #FFF;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+
+}
+
+.notes{
+    display: inline-block;
+    border: 3px solid #FFF;
+    border-radius: 5px;
+    background-color: #FFF;
+    text-align: left;
+    width: 250px;
+    
+    text-overflow: ellipsis;
+    white-space:pre-line;
+    overflow: scroll;
+    overflow-x: hidden;
+
+}
+
+
+.parentName{
+    display: flex;
+    position: absolute;
+    top: 1px;
+    left: 25px;
+    text-align: left;
+    
+}
+
+.parentNumber{
+    display: flex;
+    position: relative;
+    top: -30px;
+    left: -15px;
+}
+
+.parentMail{
+    display: flex;
+    position: absolute;
+    top: 65px;
+    left: 45px;
+
+
+}
+
+.parentLocation{
+    display: flex;
+    position: absolute;
+    top: 35px;
+    left: 45px;
+}
+
+.parentBirthday{
+    display: flex;
+    position: relative;
+    top: 2px;
+    
+    left: -192px;
+    
+    
+
+}
+
+.parentNotes{
+    display: flex;
+    position: relative;
+    left: -20px;
+    top: -20px;
+    height: 200px;
+}
+
+
+
+
+
+
+
+.minorInfoBlock{
+    padding: 20px;
+    margin: 20px;
+    border: 3px solid #FFF;
+    border-radius: 5px;
+    background-color: #FFF;
+    display: flex;
+    flex-flow: column wrap;
+    width: 140px;
+    height:50px;
+    flex-direction: column;
+    text-align: center;
+    top: 400px; 
+    box-shadow: 0 0 10px 0 rgba(157,96,212,0.5);
+
+}
+
+.minorNotesBlock{
+    padding: 20px;
+    margin: 20px;
+    border: 3px solid #FFF;
+    border-radius: 5px;
+    background-color: #FFF;
+    display: flex;
+    flex-flow: column wrap;
+    width: 226px;
+    
+    height: 167px;
+    flex-direction: column;
+    text-align: left;
+    top: -251px; 
+    left: 372px;
+    position: relative;
+    box-shadow: 0 0 10px 0 rgba(157,96,212,0.5);
+
+}
+
+.add_name{
+    margin: 30px;
+    width: 360;
+    height: 30px;
+    border-right: 1px solid #EDEDED;
+    border-left: 1px solid #EDEDED;
+    border-top: 1px solid #EDEDED;
+    transition: 0.5s;
+    background-color: #EDEDED;
+    border-radius: 2px;
+    position: relative;
+    left: -0.3%;
+    
+}
+
+.add_name:hover{
+    transition: 0.5s;
+    border-bottom: 2px solid #FFC371;
+
+}
+.add_name:focus{
+    transition: 0.5s;
+    border-bottom: 2px solid #FFC371;
+
+}
+
+.label_add_name{
+    position: relative;
+    display: flex;
+    left: 60px;
+    top: 8px;
+}
+
+
+
+
+
+.add_number{
+    width: 360;
+    height: 30px;
+    border-right: 1px solid #EDEDED;
+    border-left: 1px solid #EDEDED;
+    border-top: 1px solid #EDEDED;
+    transition: 0.5s;
+    background-color: #EDEDED;
+    border-radius: 2px;
+    margin : 20px;
+    top: 100px;
+    position: relative;
+    left: -29%;
+}
+
+.add_number:hover{
+    transition: 0.5s;
+    border-bottom: 2px solid #FFC371;
+}
+.add_number:focus{
+    transition: 0.5s;
+    border-bottom: 2px solid #FFC371;
+}
+
+.label_add_number{
+    position: absolute;
+    display: flex;
+    left: 60px;
+    top: 96px;
+    width: 160px;
+    overflow-wrap:normal;
+    
+}
+
+
+.add_mail{
+    width: 360;
+    height: 30px;
+    border-right: 1px solid #EDEDED;
+    border-left: 1px solid #EDEDED;
+    border-top: 1px solid #EDEDED;
+    transition: 0.5s;
+    background-color: #EDEDED;
+    border-radius: 2px;
+    margin : 20px;
+    top: 190px;
+    position: relative;
+    left: -56.3%;
+}
+
+.add_mail:hover{
+    transition: 0.5s;
+    border-bottom: 2px solid #FFC371;
+}
+.add_mail:focus{
+    transition: 0.5s;
+    border-bottom: 2px solid #FFC371;
+}
+
+.label_add_mail{
+    position: absolute;
+    display: flex;
+    left: 60px;
+    top: 189px;
+    width: 100px;
+    overflow-wrap:normal;
+}
+
+
+
+.add_location{
+    width: 360;
+    height: 30px;
+    border-right: 1px solid #EDEDED;
+    border-left: 1px solid #EDEDED;
+    border-top: 1px solid #EDEDED;
+    transition: 0.5s;
+    background-color: #EDEDED;
+    border-radius: 2px;
+    margin : 30px;
+
+    position: relative;
+    left: -51%;
+}
+
+.add_location:hover{
+    transition: 0.5s;
+    border-bottom: 2px solid #FFC371;
+}
+.add_location:focus{
+    transition: 0.5s;
+    border-bottom: 2px solid #FFC371;
+}
+
+.label_add_location{
+    position: absolute;
+    display: flex;
+    left: 293px;
+    top: 10px;
+
+}
+
+
+
+
+.add_birthday{
+    width: 140px;
+    height: 30px;
+    border-right: 1px solid #EDEDED;
+    border-left: 1px solid #EDEDED;
+    border-top: 1px solid #EDEDED;
+    transition: 0.5s;
+    background-color: #EDEDED;
+    border-radius: 2px;
+    margin : 30px;
+    top: 90px;
+    position: absolute;
+    left: 38%;
+    font-family: 'Nunito Sans', sans-serif;
+
+}
+
+.add_birthday:hover{
+    transition: 0.5s;
+    border-bottom: 2px solid #FFC371;
+}
+
+.add_birthday:focus{
+    transition: 0.5s;
+    border-bottom: 2px solid #FFC371;
+}
+
+.label_add_birthday{
+    position: absolute;
+    display: flex;
+    left: 293px;
+    top: 97px;
+
+}
+
+
+.add_notes{
+    width: 367px;
+    resize: none;
+    height: 200px;
+    border-right: 1px solid #EDEDED;
+    border-left: 1px solid #EDEDED;
+    border-top: 1px solid #EDEDED;
+    transition: 0.5s;
+    background-color: #EDEDED;
+    border-radius: 2px;
+    margin : 30px;
+    top: 270px;
+    position: absolute;
+    display: flex;
+    left: 4.4%;
+    text-align: left;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.add_notes:hover{
+    transition: 0.5s;
+    border-bottom: 2px solid #FFC371;
+}
+
+.add_notes:focus{
+    transition: 0.5s;
+    border-bottom: 2px solid #FFC371;
+}
+
+.label_add_notes{
+    position: absolute;
+    display: flex;
+    left: 60px;
+    top: 275px;
+    width: 100px;
+    overflow-wrap:normal;
+
+}
+
+
+.addConfirm{
+    position:relative;
+    display: flex;
+    width: 70px;
+    height: 30px;
+    left: -92%;
+    top: 525px;
+    
+    color: #111;
+
+    box-shadow: 0 0 6px 0 rgba(157,96,212,0.5);
+    border: solid 3px transparent;
+    border-image: linear-gradient(to left, #FF5F6D, #FFC371);
+    border-image-slice: 1;
+
+    text-align: center;
+
+}
+
+.addConfirm:hover{
+    box-shadow: 0 0 6px 0 rgba(157,96,212,0.5);
+    border: solid 3px transparent;
+    border-image: linear-gradient(to left, #FF5F6D, #FFC371);
+    border-image-slice: 1;
+
+    text-align: center;
+    background-image: linear-gradient(to left, #FF5F6D, #FFC371);
+    color: #FFF;
+
+}
+
+.MajorInfoBlock{
+    padding: 20px;
+    margin: 20px;
+    border: 3px solid #FFF;
+    border-radius: 5px;
+    background-color: #FFF;
+    display: flex;
+    flex-flow: column wrap;
+    width: 300px;
+    height: 70px;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 0 10px 0 rgba(157,96,212,0.5);
+
+    
+    
+}
+
+
+
+.add_frontEnd{
+    background-color: #FFF;
+    border: 5px solid #FFF;
+    border-radius: 4px;
+    width: 680px;
+    height: 600px;
+    position: relative;
+    display: flex;
+    left: 5%;
+    top: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/* écran de PC*/
+
+
+
+/* écran d'Ipad */
+
+@media screen and (max-width: 894px){
+    .add_frontEnd{
+        background-color: #FFF;
+        border: 5px solid #FFF;
+        border-radius: 4px;
+        width: 380px;
+        height: 600px;
+        position: relative;
+        display: flex;
+        left: 5%;
+        top: 80px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+    .add_name{
+        margin: 30px;
+        width: 360;
+        height: 30px;
+        border-right: 1px solid #EDEDED;
+        border-left: 1px solid #EDEDED;
+        border-top: 1px solid #EDEDED;
+        transition: 0.5s;
+        background-color: #EDEDED;
+        border-radius: 2px;
+        position: relative;
+        left: -12.3%;
+        
+    }
+    .label_add_name{
+        position: relative;
+        display: flex;
+        left: 17px;
+        top: 8px;
+    }
+    
+    .add_number{
+        width: 360;
+        height: 30px;
+        border-right: 1px solid #EDEDED;
+        border-left: 1px solid #EDEDED;
+        border-top: 1px solid #EDEDED;
+        transition: 0.5s;
+        background-color: #EDEDED;
+        border-radius: 2px;
+        margin : 20px;
+        top: 100px;
+        position: relative;
+        left: -64%;
+    }
+    .label_add_number{
+        position: absolute;
+        display: flex;
+        left: 17px;
+        top: 96px;
+        width: 160px;
+        overflow-wrap:normal;
+    }
+    .add_mail{
+        width: 360;
+        height: 30px;
+        border-right: 1px solid #EDEDED;
+        border-left: 1px solid #EDEDED;
+        border-top: 1px solid #EDEDED;
+        transition: 0.5s;
+        background-color: #EDEDED;
+        border-radius: 2px;
+        margin : 20px;
+        top: 190px;
+        position: relative;
+        left: -112.3%;
+    }
+    .label_add_mail{
+        position: absolute;
+        display: flex;
+        left: 20px;
+        top: 189px;
+        width: 100px;
+        overflow-wrap:normal;
+    }
+    .add_location{
+        width: 360;
+        height: 30px;
+        border-right: 1px solid #EDEDED;
+        border-left: 1px solid #EDEDED;
+        border-top: 1px solid #EDEDED;
+        transition: 0.5s;
+        background-color: #EDEDED;
+        border-radius: 2px;
+        margin : 30px;
+    
+        position: relative;
+        left: -111%;
+    }
+    .label_add_location{
+        position: absolute;
+        display: flex;
+        left: 218px;
+        top: 10px;
+    
+    }
+
+    .add_birthday{
+        width: 140px;
+        height: 30px;
+        border-right: 1px solid #EDEDED;
+        border-left: 1px solid #EDEDED;
+        border-top: 1px solid #EDEDED;
+        transition: 0.5s;
+        background-color: #EDEDED;
+        border-radius: 2px;
+        margin : 30px;
+        top: 90px;
+        position: absolute;
+        left: 50%;
+        font-family: 'Nunito Sans', sans-serif;
+    
+    }
+    .label_add_birthday{
+        position: absolute;
+        display: flex;
+        left: 218px;
+        top: 97px;
+    
+    }
+
+    .add_notes{
+        width: 367px;
+        resize: none;
+        height: 200px;
+        border-right: 1px solid #EDEDED;
+        border-left: 1px solid #EDEDED;
+        border-top: 1px solid #EDEDED;
+        transition: 0.5s;
+        background-color: #EDEDED;
+        border-radius: 2px;
+        margin : 30px;
+        top: 270px;
+        position: absolute;
+        display: flex;
+        left: -7%;
+        text-align: left;
+        font-family: 'Nunito Sans', sans-serif;
+    }
+
+    .label_add_notes{
+        position: absolute;
+        display: flex;
+        left: 7px;
+        top: 275px;
+        width: 100px;
+        overflow-wrap:normal;
+    
+    }
+
+    .addConfirm{
+        position:relative;
+        display: flex;
+        width: 55px;
+        height: 30px;
+        border-radius: 5px;
+        left: -170%;
+        top: 525px;
+    }
+    
+
+
+}
+
+
+/* écran d'Iphone */
+@media screen and (max-width: 544px){
+    .add_frontEnd{
+        background-color: #FFF;
+        border: 5px solid #FFF;
+        border-radius: 4px;
+        width: 180px;
+        height: 870px;
+        position: relative;
+        display: flex;
+        left: 5%;
+        top: 80px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+    .add_name{
+        margin: 30px;
+        width: 360;
+        height: 30px;
+        border-right: 1px solid #EDEDED;
+        border-left: 1px solid #EDEDED;
+        border-top: 1px solid #EDEDED;
+        transition: 0.5s;
+        background-color: #EDEDED;
+        border-radius: 2px;
+        position: relative;
+        left: -25.3%;
+        
+    }
+    .label_add_name{
+        position: relative;
+        display: flex;
+        left: 17px;
+        top: 8px;
+    }
+    
+    .add_number{
+        width: 360;
+        height: 30px;
+        border-right: 1px solid #EDEDED;
+        border-left: 1px solid #EDEDED;
+        border-top: 1px solid #EDEDED;
+        transition: 0.5s;
+        background-color: #EDEDED;
+        border-radius: 2px;
+        margin : 20px;
+        top: 100px;
+        position: relative;
+        left: -134%;
+    }
+    .label_add_number{
+        position: absolute;
+        display: flex;
+        left: 17px;
+        top: 96px;
+        width: 160px;
+        overflow-wrap:normal;
+    }
+    .add_mail{
+        width: 360;
+        height: 30px;
+        border-right: 1px solid #EDEDED;
+        border-left: 1px solid #EDEDED;
+        border-top: 1px solid #EDEDED;
+        transition: 0.5s;
+        background-color: #EDEDED;
+        border-radius: 2px;
+        margin : 20px;
+        top: 190px;
+        position: relative;
+        left: -237.3%;
+    }
+    .label_add_mail{
+        position: absolute;
+        display: flex;
+        left: 20px;
+        top: 189px;
+        width: 100px;
+        overflow-wrap:normal;
+    }
+    .add_location{
+        width: 360;
+        height: 30px;
+        border-right: 1px solid #EDEDED;
+        border-left: 1px solid #EDEDED;
+        border-top: 1px solid #EDEDED;
+        transition: 0.5s;
+        background-color: #EDEDED;
+        border-radius: 2px;
+        margin : 20px;
+        top: 280px;
+        position: relative;
+        left: -339.3%;
+    }
+    .label_add_location{
+        position: absolute;
+        display: flex;
+        left: 20px;
+        top: 280px;
+    
+    }
+
+    .add_birthday{
+        width: 140px;
+        height: 30px;
+        border-right: 1px solid #EDEDED;
+        border-left: 1px solid #EDEDED;
+        border-top: 1px solid #EDEDED;
+        transition: 0.5s;
+        background-color: #EDEDED;
+        border-radius: 2px;
+        margin : 30px;
+        top: 370px;
+        position: absolute;
+        left: -7.5%;
+        font-family: 'Nunito Sans', sans-serif;
+    
+    }
+    .label_add_birthday{
+        position: absolute;
+        display: flex;
+        left: 20px;
+        top: 380px;
+    
+    }
+
+    .add_notes{
+        width: 140px;
+        resize: none;
+        height: 250px;
+        border-right: 1px solid #EDEDED;
+        border-left: 1px solid #EDEDED;
+        border-top: 1px solid #EDEDED;
+        transition: 0.5s;
+        background-color: #EDEDED;
+        border-radius: 2px;
+        margin : 30px;
+        top: 460px;
+        position: absolute;
+        display: flex;
+        left: -7%;
+        text-align: left;
+        font-family: 'Nunito Sans', sans-serif;
+    }
+
+    .label_add_notes{
+        position: absolute;
+        display: flex;
+        left: 20px;
+        top: 470px;
+    
+    }
+
+    .addConfirm{
+        position: absolute;
+        display: flex;
+        left: 60px;
+        top: 800px;
+        width: 55px;
+        height: 30px;
+        border-radius: 5px;
+        text-align: center;
+
+    }
+
+
+}
+
+
+
+
+
+@media screen and (max-width: 965px){
+    .infoBlock{
+        display: block;
+        position: relative;
+        left: 0px;
+        margin: auto;
+        text-align: left;
+        width: 400px;
+        overflow-wrap: break-word;
+        border: 2px solid #FFF;
+        border-radius: 5px;
+        height:500px;
+    }
+
+    .minorNotesBlock{
+        padding: 20px;
+        margin: 20px;
+        border: 3px solid #FFF;
+        border-radius: 5px;
+        background-color: #FFF;
+        display: flex;
+        flex-flow: column wrap;
+        width: 226px;
+        
+        height: 167px;
+        flex-direction: column;
+        text-align: left;
+        top: 0px; 
+        left: 0%;
+        position: relative;
+    
+    }
+    
+    .minorInfoBlock{
+        padding: 20px;
+        margin: 20px;
+        border: 3px solid #FFF;
+        border-radius: 5px;
+        background-color: #FFF;
+        display: flex;
+        flex-flow: column wrap;
+        width: 140px;
+        height:50px;
+        flex-direction: column;
+        text-align: center;
+        top: 0px; 
+        left: 0%;
+        position: relative;
+    
+    }
+    .MajorInfoBlock{
+        padding: 20px;
+        margin: 20px;
+        border: 3px solid #FFF;
+        border-radius: 5px;
+        background-color: #FFF;
+        display: flex;
+        flex-flow: column wrap;
+        width: 300px;
+        height: 70px;
+        flex-direction: column;
+        text-align: center;
+        left: 0%;
+        position: relative;
+    
+        
+        
+    }
+
+    .parentName{
+        display: flex;
+        position: absolute;
+        top: -15px;
+        left: 10px;
+        text-align: left;
+        
+    }
+
+    .parentLocation{
+        display: flex;
+        position: absolute;
+        top: 35px;
+        left: 25px;
+    }
+    .parentMail{
+        display: flex;
+        position: absolute;
+        top: 65px;
+        left: 27px;
+        
+    
+    
+    }
+
+    .removeParent{
+        top: -345px;
+        left: 65%;
+
+    }
+}
+
+
+@media screen and (max-width: 488px){
+    .infoBlock{
+        display: block;
+        position: relative;
+        left: 61px;
+        margin: auto;
+        text-align: left;
+        width: 300px;
+        overflow-wrap: break-word;
+        border: 2px solid #FFF;
+        border-radius: 5px;
+        height:500px;
+        
+    }
+
+    .minorNotesBlock{
+        padding: 20px;
+        margin: 20px;
+        border: 3px solid #FFF;
+        border-radius: 5px;
+        background-color: #FFF;
+        display: flex;
+        flex-flow: column wrap;
+        width: 226px;
+        
+        height: 167px;
+        flex-direction: column;
+        text-align: left;
+        top: 0px; 
+        left: 0%;
+        position: relative;
+        top:-2670px;
+    
+    }
+    
+    .minorInfoBlock{
+        padding: 20px;
+        margin: 20px;
+        border: 3px solid #FFF;
+        border-radius: 5px;
+        background-color: #FFF;
+        display: flex;
+        flex-flow: column wrap;
+        width: 140px;
+        height:50px;
+        flex-direction: column;
+        text-align: center;
+        top: 0px; 
+        left: 0%;
+        position: relative;
+        top:-2670px;
+    
+    }
+    .MajorInfoBlock{
+        padding: 20px;
+        margin: 20px;
+        border: 3px solid #FFF;
+        border-radius: 5px;
+        background-color: #FFF;
+        display: flex;
+        flex-flow: column wrap;
+        width: 200px;
+        height: 70px;
+        flex-direction: column;
+        text-align: center;
+        left: 0%;
+        position: relative;
+        top: -2670px;
+    
+        
+        
+    }
+
+    .parentName{
+        display: flex;
+        position: absolute;
+        top: -15px;
+        left: 10px;
+        text-align: left;
+        
+    }
+
+    .parentLocation{
+        display: flex;
+        position: absolute;
+        top: 35px;
+        left: 25px;
+    }
+    .parentMail{
+        display: flex;
+        position: absolute;
+        top: 65px;
+        left: 27px;
+        
+    
+    
+    }
+}
+
+
+@media screen and (max-width: 648px){
+    .infoBlock{
+        display: block;
+        position: relative;
+        left: 61px;
+        margin: auto;
+        text-align: left;
+        width: 300px;
+        overflow-wrap: break-word;
+        border: 2px solid #FFF;
+        border-radius: 5px;
+        height:500px;
+        
+    }
+
+    .minorNotesBlock{
+        padding: 20px;
+        margin: 20px;
+        border: 3px solid #FFF;
+        border-radius: 5px;
+        background-color: #FFF;
+        display: flex;
+        flex-flow: column wrap;
+        width: 200px;
+        
+        height: 167px;
+        flex-direction: column;
+        text-align: left;
+        top: 0px; 
+        left: 0%;
+        position: relative;
+        top:0px;
+    
+    }
+    
+    .minorInfoBlock{
+        padding: 20px;
+        margin: 20px;
+        border: 3px solid #FFF;
+        border-radius: 5px;
+        background-color: #FFF;
+        display: flex;
+        flex-flow: column wrap;
+        width: 140px;
+        height:50px;
+        flex-direction: column;
+        text-align: center;
+        top: 0px; 
+        left: 0%;
+        position: relative;
+        top:0px;
+    
+    }
+    .MajorInfoBlock{
+        padding: 20px;
+        margin: 20px;
+        border: 3px solid #FFF;
+        border-radius: 5px;
+        background-color: #FFF;
+        display: flex;
+        flex-flow: column wrap;
+        width: 200px;
+        height: 70px;
+        flex-direction: column;
+        text-align: center;
+        left: 0%;
+        position: relative;
+        top: 0px;
+    
+        
+        
+    }
+
+    .parentName{
+        display: flex;
+        position: absolute;
+        top: -15px;
+        left: 10px;
+        text-align: left;
+        
+    }
+
+    .parentLocation{
+        display: flex;
+        position: absolute;
+        top: 35px;
+        left: 25px;
+    }
+    .parentMail{
+        display: flex;
+        position: absolute;
+        top: 65px;
+        left: 27px;
+        
+    
+    
+    }
+    .notes{
+        display: inline-block;
+        border: 3px solid #FFF;
+        border-radius: 5px;
+        background-color: #FFF;
+        text-align: left;
+        width: 200px;
+        
+        text-overflow: ellipsis;
+        white-space:pre-line;
+        overflow: scroll;
+    
+    }
+    .name{
+
+        display: inline-block;
+        font-weight: bold;
+        font-size: 23px;
+        top: 1px;
+        left:20px;
+        text-align: left;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 240px;
+    
+    
+        
+    }
+    .location{
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 220px;
+        text-align: left;
+        display: inline-block;
+        color: rgba(44, 44, 44, 0.716);
+    
+    }
+    .mail{
+
+        display: inline-block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    
+        width: 220px;
+        text-align: left;
+        color: rgba(44, 44, 44, 0.716);
+        
+        cursor: pointer;
+    }
+    .removeParent{
+        top: -345px;
+        left: 71%;
+
+    }
+}
+
+
+
+@media screen and (max-width: 494px){
+    .infoBlock{
+        display: block;
+        position: relative;
+        left: 61px;
+        margin: auto;
+        text-align: left;
+        width: 300px;
+        overflow-wrap: break-word;
+        border: 2px solid #FFF;
+        border-radius: 5px;
+        height:500px;
+        
+    }
+
+    .minorNotesBlock{
+        padding: 20px;
+        margin: 20px;
+        border: 3px solid #FFF;
+        border-radius: 5px;
+        background-color: #FFF;
+        display: flex;
+        flex-flow: column wrap;
+        width: 200px;
+        
+        height: 167px;
+        flex-direction: column;
+        text-align: left;
+        top: 0px; 
+        left: 0%;
+        position: relative;
+        top:-3048px;
+    
+    }
+    
+    .minorInfoBlock{
+        padding: 20px;
+        margin: 20px;
+        border: 3px solid #FFF;
+        border-radius: 5px;
+        background-color: #FFF;
+        display: flex;
+        flex-flow: column wrap;
+        width: 140px;
+        height:50px;
+        flex-direction: column;
+        text-align: center;
+        top: 0px; 
+        left: 0%;
+        position: relative;
+        top:-3048px;
+    
+    }
+    .MajorInfoBlock{
+        padding: 20px;
+        margin: 20px;
+        border: 3px solid #FFF;
+        border-radius: 5px;
+        background-color: #FFF;
+        display: flex;
+        flex-flow: column wrap;
+        width: 200px;
+        height: 70px;
+        flex-direction: column;
+        text-align: center;
+        left: 0%;
+        position: relative;
+        top: -3048px;
+    
+        
+        
+    }
+
+    .parentName{
+        display: flex;
+        position: absolute;
+        top: -15px;
+        left: 10px;
+        text-align: left;
+        
+    }
+
+    .parentLocation{
+        display: flex;
+        position: absolute;
+        top: 35px;
+        left: 25px;
+    }
+    .parentMail{
+        display: flex;
+        position: absolute;
+        top: 65px;
+        left: 27px;
+        
+    
+    
+    }
+    .notes{
+        display: inline-block;
+        border: 3px solid #FFF;
+        border-radius: 5px;
+        background-color: #FFF;
+        text-align: left;
+        width: 200px;
+        
+        text-overflow: ellipsis;
+        white-space:pre-line;
+        overflow: scroll;
+    
+    }
+}
+
+
+@media screen and (max-width: 430px){
+    .infoBlock{
+        display: block;
+        position: relative;
+        left: 61px;
+        margin: auto;
+        text-align: left;
+        width: 300px;
+        overflow-wrap: break-word;
+        border: none;
+        border-radius: 5px;
+        height:500px;
+        
+    }
+
+    .minorNotesBlock{
+        padding: 20px;
+        margin: 20px;
+        border: 3px solid #FFF;
+        border-radius: 5px;
+        background-color: #FFF;
+        display: flex;
+        flex-flow: column wrap;
+        width: 185px;
+        
+        height: 167px;
+        flex-direction: column;
+        text-align: left;
+        top: 0px; 
+        left: 5%;
+        position: relative;
+        top:-3048px;
+    
+    }
+    
+    .minorInfoBlock{
+        padding: 20px;
+        margin: 20px;
+        border: 3px solid #FFF;
+        border-radius: 5px;
+        background-color: #FFF;
+        display: flex;
+        flex-flow: column wrap;
+        width: 140px;
+        height:50px;
+        flex-direction: column;
+        text-align: center;
+        top: 0px; 
+        left: 5%;
+        position: relative;
+        top:-3048px;
+    
+    }
+    .MajorInfoBlock{
+        padding: 20px;
+        margin: 20px;
+        border: 3px solid #FFF;
+        border-radius: 5px;
+        background-color: #FFF;
+        display: flex;
+        flex-flow: column wrap;
+        width: 180px;
+        height: 70px;
+        flex-direction: column;
+        text-align: center;
+        left: 5%;
+        position: relative;
+        top: -3048px;
+    
+        
+        
+    }
+
+    .parentName{
+        display: flex;
+        position: absolute;
+        top: -15px;
+        left: 10px;
+        text-align: left;
+        
+    }
+
+    .parentLocation{
+        display: flex;
+        position: absolute;
+        top: 35px;
+        left: 0px;
+    }
+    .parentMail{
+        display: flex;
+        position: absolute;
+        top: 65px;
+        left: 0px;
+        
+    
+    
+    }
+    .notes{
+        display: inline-block;
+
+        text-align: left;
+        width: 220px;
+        
+        text-overflow: ellipsis;
+        white-space:pre-line;
+        overflow: scroll;
+    
+    }
+
+
+    
+
+}
+
+
+
+
+
+
+
+
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }

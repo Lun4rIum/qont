@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <meta charset="utf-8">
+    <title>Contacts</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+
+<div class="switchMode">
+    <p class="lightIcon">☀️</p>
+        <label class="switch">
+            <input type="checkbox" class="checkMode" id="checkMode">
+            <span class="slider round"></span>
+        </label>
+    <p class="darkIcon">🌑</p>
+</div>
+
+<div class="buttonAdd">
+    <a class="addbutton" title="Ajouter un contact" href='{{ url_for("add_contact") }}''>+</a>
+</div>
+
+
+<div class="list">
+
+    <ol>
+        {%for i in range(options|length)%}
+    
+            <a class="listName" href="/{{i}}">{{options[i]}}</a>
+        {%endfor%}
+    </ol>
+</div>
+
+<script>
+    document.getElementById('checkMode').onchange = function() {
+        if ( document.getElementById('checkMode').checked === false ) {
+            var element = document.body;
+            element.classList.remove("dark-mode");
+
+            document.cookie = "isDark=false;SameSite=Lax";
+
+        }
+        else{
+            var element = document.body;
+            element.classList.add("dark-mode");
+        
+            document.cookie = "isDark=true;SameSite=Lax";
+
+        }
+        
+    };
+</script>
+
+
+
+<form action="{{ url_for('added') }}" method="POST">
+    <div class="add_frontEnd">
+        <label class= "label_add_name" for="add_name">Nom</label>
+        <input type="text" class="add_name" id="add_name" name='add_name' placeholder="Nom..." required>
+        <label class= "label_add_number" for="add_number">Numéro de téléphone</label>
+        <input type="text" class="add_number" id="add_number" name='add_number' placeholder="Numéro...">
+        <label class= "label_add_mail" for="add_mail">Adresse mail</label>
+        <input type="email" class="add_mail" id="add_mail" name='add_mail' placeholder="Mail...">
+        <label class= "label_add_location" for="add_location">Adresse</label>
+        <input type="text" class="add_location" id="add_location" name='add_location' placeholder="Adresse...">
+        <label class= "label_add_birthday" for="add_birthday">Anniversaire</label>
+        <input type="date" class="add_birthday" id="add_birthday" name='add_birthday' placeholder="Anniversaire...">
+        <label class= "label_add_notes" for="add_notes">Notes</label>
+        <textarea type="text" class="add_notes" id="add_notes" name='add_notes' placeholder="Notes..."></textarea>
+    
+        <button class="addConfirm" type="submit" onclick=href="{{ url_for('added') }}">Ajouter</button>
+    </div>
+</form>
+
+
+
+<div class = "vertical"></div>
+
+<script>
+    if(document.cookie == "isDark=true"){
+        
+        var element = document.body;
+        element.classList.toggle("dark-mode"); 
+        var element= document.getElementById("checkMode");
+        element.setAttribute("checked","true")
+    }
+
+    if(document.cookie == "isDark=false"){
+
+            var element = document.body;
+            element.classList.remove("dark-mode");
+    }
+</script>
+</body>
+</html>

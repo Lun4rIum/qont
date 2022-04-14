@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script>
+        window.addEventListener('beforeunload', function (e) {
+            location.href = '{{ url_for("shutdown") }}';
+        });
+    </script>
+
+    <script src="https://kit.fontawesome.com/bf85678e21.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <title>Contacts</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+
+<div class="switchMode">
+    <p class="lightIcon">☀️</p>
+        <label class="switch">
+            <input type="checkbox" class="checkMode" id="checkMode">
+            <span class="slider round"></span>
+        </label>
+    <p class="darkIcon">🌑</p>
+</div>
+
+<div class="buttonAdd">
+    <a class="addbutton" title="Ajouter un contact" href='{{ url_for("add_contact") }}' style="visibility: hidden;">+</a>
+</div>
+
+<div class="list">
+
+    
+    <ol>
+        {%for i in range(options|length)%}
+    
+            <a class="listName" href="/{{i}}">{{options[i]}}</a>
+        {%endfor%}
+    </ol>
+</div>
+
+<script>
+    document.getElementById('checkMode').onchange = function() {
+        if ( document.getElementById('checkMode').checked === false ) {
+            var element = document.body;
+            element.classList.remove("dark-mode");
+
+            document.cookie = "isDark=false;SameSite=Lax";
+
+        }
+        else{
+            var element = document.body;
+            element.classList.add("dark-mode");
+        
+            document.cookie = "isDark=true;SameSite=Lax";
+
+        }
+        
+    };
+</script>
+
+<div class="buttonGrid">
+    <div class="save_backup">
+        <a href="{{ url_for('export') }}" target="blank"><button class='exporting'><i class="fa-solid fa-file-export" style="cursor: pointer;"></i></button></a>
+        
+    </div>
+
+    <div class="load_backup">
+        <button class="loadbackup">
+            <input class="load_backupButton" name="load_backupButton" id="load_backupButton" type='file' accept=".json"></input>
+            <label for="load_backupButton"><i class="fa-solid fa-file-import" style="cursor: pointer;"></i></label></label>
+        </button>
+    </div> 
+
+
+    <div class="AddContactBigButton">
+        <button class="BigAddButton" title="Ajouter un contact" onclick=location.href='{{ url_for("add_contact") }}'>+</button>
+    </div> 
+</div>
+
+
+
+
+<div class = "vertical"></div>
+<script>
+    if(document.cookie == "isDark=true"){
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+            var element= document.getElementById("checkMode");
+            element.setAttribute("checked","true")
+        }
+    if(document.cookie == "isDark=false"){
+            var element = document.body;
+            element.classList.remove("dark-mode");
+        }
+    
+
+</script>
+</body>
+<footer>
+    
+    
+    <hr class = "horizontal"/>
+    <div class="foot" >
+        <i class="fa-brands fa-github" id="github-icon" onclick="location.href = 'https://github.com/Lun4rIum'" style="cursor: pointer;"></i>
+        <p class="github-pseudo" onclick="location.href = 'https://github.com/Lun4rIum'">Lun4rIum</p>
+    </div>
+</footer>
+
+
+
+</html>
