@@ -1,7 +1,8 @@
 # qont
 Your open-source contact app
 
-#Working on :
+[Releases](https://github.com/Lun4rIum/qont/releases/tag/Release)
+# Working on :
 
 - english integration
 - responsive design
